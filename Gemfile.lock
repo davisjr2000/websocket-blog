@@ -85,6 +85,7 @@ GEM
     cucumber-core (1.5.0)
       gherkin (~> 4.0)
     cucumber-wire (0.0.1)
+    database_cleaner (1.7.0)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -268,6 +269,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.2)
+  database_cleaner
   devise
   guard (~> 2.14.0)
   guard-cucumber (~> 2.1.2)

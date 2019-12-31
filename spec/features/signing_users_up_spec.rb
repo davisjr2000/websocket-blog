@@ -6,7 +6,7 @@ RSpec.feature "Users Sign Up" do
 
         click_link 'Sign Up'
 
-        fill_in "Email", with: 'user@example.com'
+        fill_in "Email", with: 'john@mail.com'
         fill_in "Password", with: 'password'
         fill_in "Password confirmation", with: 'password'
 
