@@ -20,25 +20,27 @@
 <hr>
 
 <div class='col-md-12'>
-    <%= form_for [@article, @comment ], 
+    <%= form_for [@article, @comment ], remote: true,
     :html => {class: "form-horizontal", role: "form"} do |f| %>
         <% if @comment.errors.any? %>
-            <div class="panel panel-danger col-md-offset-1">
-                <div class="panel-heading"> 
-                    <h2 class="panel-title">
-                    <%= pluralize(@comment.errors.count, "error") %>
-                    prohibited this comment from being saved: 
-                    </h2>
-                    <div class="panel-body"> 
-                        <ul>
-                        <% @comment.errors.full_messages.each do |msg| %> 
-                            <li> <%= msg %> </li>
-                        <% end %> 
-                        </ul>
-                    </div>
-                </div> 
+            <div id="messages">
+                <div class="panel panel-danger col-md-offset-1">
+                    <div class="panel-heading"> 
+                        <h2 class="panel-title">
+                        <%= pluralize(@comment.errors.count, "error") %>
+                        prohibited this comment from being saved: 
+                        </h2>
+                        <div class="panel-body"> 
+                            <ul>
+                            <% @comment.errors.full_messages.each do |msg| %> 
+                                <li> <%= msg %> </li>
+                            <% end %> 
+                            </ul>
+                        </div>
+                    </div> 
+                </div>
             </div>
-            <% end %>
+        <% end %>
         <div class='form-group'>
             <div class='control-label col-md-2'>
                 <%= f.label :body, 'New Comment' %> 
