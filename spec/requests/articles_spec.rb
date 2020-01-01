@@ -27,7 +27,7 @@ RSpec.describe "Articles", type: :request do
 
             it 'redirects to the home page' do
                 expect(response.status).to eq 302
-                flash_message = "You can onlu edit your own article"
+                flash_message = "You can only edit your own article."
                 expect(flash[:alert]).to eq flash_message
             end
         end
