@@ -10,7 +10,6 @@ class CommentsController < ApplicationController
         @comment.user = current_user
         
         if @comment.save
-            puts 'Saved Comment!'
           ActionCable.server.broadcast "comments",
             render(partial: 'comments/comment', object: @comment)
           flash[:notice] = "Comment has been created"
